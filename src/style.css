@@ -1,0 +1,123 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Navegação */
+nav {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: #0077cc;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* Seções */
+section {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Listas */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+ul li p {
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+/* Contato */
+p b {
+  color: #0077cc;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-links {
+  margin: 15px 0;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #0077cc;
+}
+
+/* Botão Voltar ao Topo */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #005999;
+}
