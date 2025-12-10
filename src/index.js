@@ -1,34 +1,54 @@
-
+// Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    // Atualiza automaticamente o ano no copyright
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+
+    // Update copyright year
     atualizarCopyright();
     
-    // Configura o botão de voltar ao topo
+    // Configure back to top button
     configurarBotaoTopo();
     
-    // Contador de visitas
-    contadorVisitas();
+    // Smooth scroll for navigation links
+    configurarSmoothScroll();
+    
+    // Add scroll animations
+    configurarScrollAnimations();
 });
 
-// Atualiza o ano do copyright automaticamente
+// Update copyright year automatically
 function atualizarCopyright() {
-    const copyrightElement = document.querySelector('footer p:first-child');
-    if (copyrightElement) {
-        const currentYear = new Date().getFullYear();
-        copyrightElement.textContent = copyrightElement.textContent.replace('2024', currentYear);
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
     }
 }
 
-// Configura o botão de voltar ao topo
+// Configure back to top button
 function configurarBotaoTopo() {
     const backToTopButton = document.getElementById('backToTop');
     
     if (backToTopButton) {
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'block';
+                backToTopButton.classList.add('show');
             } else {
-                backToTopButton.style.display = 'none';
+                backToTopButton.classList.remove('show');
             }
         });
         
@@ -41,25 +61,70 @@ function configurarBotaoTopo() {
     }
 }
 
-// Contador de visitas simples
-function contadorVisitas() {
-    let visitCount = localStorage.getItem('visitCount') || 0;
-    visitCount = parseInt(visitCount) + 1;
-    localStorage.setItem('visitCount', visitCount);
-    
-    const visitCounter = document.createElement('p');
-    visitCounter.textContent = `Esta página foi visitada ${visitCount} vezes`;
-    visitCounter.style.marginTop = '10px';
-    visitCounter.style.fontSize = '0.9em';
-    
-    const footerContent = document.querySelector('.footer-content');
-    if (footerContent) {
-        footerContent.appendChild(visitCounter);
-    }
+// Smooth scroll for navigation links
+function configurarSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 }
 
-// Função adicional: Formulário de contato (para implementação futura)
-function validarFormularioContato() {
-    // Esta função pode ser usada quando você adicionar um formulário de contato
-    console.log('Função de validação de formulário pronta para implementação');
+// Scroll animations
+function configurarScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+    });
+
+    // Observe cert cards
+    document.querySelectorAll('.cert-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+
+    // Observe skill categories
+    document.querySelectorAll('.skill-category').forEach(category => {
+        category.style.opacity = '0';
+        category.style.transform = 'translateY(30px)';
+        category.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(category);
+    });
 }
+
+// Navbar background on scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+    }
+});
