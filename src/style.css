@@ -25,6 +25,10 @@
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --pill-success-color: #0f766e;
+    --pill-success-bg: #ecfdf3;
+    --pill-neutral-color: #92400e;
+    --pill-neutral-bg: #fffbeb;
 }
 
 html {
@@ -579,6 +583,88 @@ section {
 .skill-tag:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+}
+
+/* Projects Section */
+.projects {
+    background: var(--bg-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.project-top {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.project-pill {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.project-pill.success {
+    color: var(--pill-success-color);
+    background: var(--pill-success-bg);
+}
+
+.project-pill.neutral {
+    color: var(--pill-neutral-color);
+    background: var(--pill-neutral-bg);
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.project-points {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--text-primary);
+}
+
+.project-points li {
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.project-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
 }
 
 /* Contact Section */
