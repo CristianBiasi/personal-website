@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Initialize theme (before i18n to avoid flash)
+    initTheme();
+
     // Initialize i18n (auto-detect language by IP)
     if (typeof initI18n === 'function') {
         initI18n();
@@ -35,6 +38,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll animations
     configurarScrollAnimations();
 });
+
+// ============================================
+//   THEME (dark / light)
+// ============================================
+
+function initTheme() {
+    // Check saved preference, then system preference
+    const saved = localStorage.getItem('preferredTheme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+    applyTheme(theme);
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+        btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('preferredTheme', next);
+    applyTheme(next);
+}
 
 // Update copyright year automatically
 function atualizarCopyright() {

@@ -7,28 +7,75 @@
     box-sizing: border-box;
 }
 
+/* ============================================
+   LIGHT THEME (default)
+   ============================================ */
 :root {
     --primary-color: #6366f1;
     --primary-dark: #4f46e5;
     --secondary-color: #8b5cf6;
     --accent-color: #ec4899;
+
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
+
     --bg-primary: #ffffff;
     --bg-secondary: #f9fafb;
     --bg-dark: #111827;
+    --bg-card: #ffffff;
+    --bg-navbar: rgba(255, 255, 255, 0.95);
+    --bg-nav-mobile: #ffffff;
+
     --border-color: #e5e7eb;
+
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+    --timeline-marker-border: #ffffff;
+}
+
+/* ============================================
+   DARK THEME
+   ============================================ */
+[data-theme="dark"] {
+    --primary-color: #818cf8;
+    --primary-dark: #6366f1;
+    --secondary-color: #a78bfa;
+    --accent-color: #f472b6;
+
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-dark: #020617;
+    --bg-card: #1e293b;
+    --bg-navbar: rgba(15, 23, 42, 0.95);
+    --bg-nav-mobile: #1e293b;
+
+    --border-color: #334155;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+
+    --gradient-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    --gradient-secondary: linear-gradient(135deg, #f472b6 0%, #fb7185 100%);
+    --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+
+    --timeline-marker-border: #1e293b;
 }
 
 html {
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -37,6 +84,7 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -53,7 +101,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-navbar);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
@@ -115,6 +163,29 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: rotate(20deg);
 }
 
 .lang-toggle {
@@ -421,12 +492,12 @@ section {
     height: 16px;
     border-radius: 50%;
     background: var(--gradient-primary);
-    border: 4px solid white;
+    border: 4px solid var(--timeline-marker-border);
     box-shadow: var(--shadow-md);
 }
 
 .timeline-content {
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
@@ -490,7 +561,7 @@ section {
 }
 
 .cert-card {
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
@@ -573,7 +644,7 @@ section {
 }
 
 .skill-category {
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
@@ -634,7 +705,7 @@ section {
     align-items: center;
     gap: 1.5rem;
     padding: 1.5rem;
-    background: white;
+    background: var(--bg-card);
     border-radius: 12px;
     text-decoration: none;
     color: var(--text-primary);
@@ -790,7 +861,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: white;
+        background: var(--bg-nav-mobile);
         width: 100%;
         text-align: center;
         transition: 0.3s;
