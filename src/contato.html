@@ -9,30 +9,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="contact">
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">Cristian de Biasi</div>
             <ul class="nav-menu">
-                <li><a href="../index.html#sobre">Sobre</a></li>
-                <li><a href="../index.html#experiencia">Experiência</a></li>
-                <li><a href="../index.html#certificacoes">Certificações</a></li>
-                <li><a href="../index.html#conhecimentos">Conhecimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="../index.html#sobre" data-i18n="navAbout">Sobre</a></li>
+                <li><a href="../index.html#experiencia" data-i18n="navExperience">Experiência</a></li>
+                <li><a href="../index.html#certificacoes" data-i18n="navCertifications">Certificações</a></li>
+                <li><a href="../index.html#conhecimentos" data-i18n="navSkills">Conhecimentos</a></li>
+                <li><a href="#contato" data-i18n="navContact">Contato</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <section id="contato" class="contact" style="padding-top: 120px;">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
+            <h2 class="section-title" data-i18n="contactTitle">Entre em Contato</h2>
             <div class="contact-content">
-                <p class="contact-lead">Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato através de qualquer um dos canais abaixo!</p>
+                <p class="contact-lead" data-i18n="contactLeadFull">Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato através de qualquer um dos canais abaixo!</p>
                 <div class="contact-methods">
                     <a href="mailto:cristian.biasi20@gmail.com" class="contact-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -79,18 +82,19 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; <span id="currentYear"></span> Cristian de Biasi. Todos os direitos reservados.</p>
-                <p class="footer-subtitle">Desenvolvido com HTML, CSS e JavaScript</p>
+                <p>&copy; <span id="currentYear"></span> Cristian de Biasi. <span data-i18n="footerRights">Todos os direitos reservados.</span></p>
+                <p class="footer-subtitle" data-i18n="footerBuilt">Desenvolvido com HTML, CSS e JavaScript</p>
             </div>
         </div>
     </footer>
 
-    <button id="backToTop" class="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <button id="backToTop" class="back-to-top" data-i18n-aria="backToTop" title="Voltar ao topo" aria-label="Voltar ao topo">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
+    <script src="i18n.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

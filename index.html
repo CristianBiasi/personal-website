@@ -15,16 +15,19 @@
         <div class="nav-container">
             <div class="nav-logo">Cristian de Biasi</div>
             <ul class="nav-menu">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#experiencia">Experiência</a></li>
-                <li><a href="#certificacoes">Certificações</a></li>
-                <li><a href="#conhecimentos">Conhecimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre" data-i18n="navAbout">Sobre</a></li>
+                <li><a href="#experiencia" data-i18n="navExperience">Experiência</a></li>
+                <li><a href="#certificacoes" data-i18n="navCertifications">Certificações</a></li>
+                <li><a href="#conhecimentos" data-i18n="navSkills">Conhecimentos</a></li>
+                <li><a href="#contato" data-i18n="navContact">Contato</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,15 +38,15 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        <span class="gradient-text">Desenvolvedor</span> &<br>
-                        Técnico de TI
+                        <span class="gradient-text" data-i18n="heroTitle1">Desenvolvedor</span> &<br>
+                        <span data-i18n="heroTitle2">Técnico de TI</span>
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle" data-i18n="heroSubtitle">
                         Transformando ideias em soluções tecnológicas inovadoras
                     </p>
                     <div class="hero-buttons">
-                        <a href="#contato" class="btn btn-primary">Entre em Contato</a>
-                        <a href="https://github.com/CristianBiasi" target="_blank" class="btn btn-secondary">Ver GitHub</a>
+                        <a href="#contato" class="btn btn-primary" data-i18n="heroBtnContact">Entre em Contato</a>
+                        <a href="https://github.com/CristianBiasi" target="_blank" class="btn btn-secondary" data-i18n="heroBtnGithub">Ver GitHub</a>
                     </div>
                     <div class="social-icons">
                         <a href="https://github.com/CristianBiasi" target="_blank" aria-label="GitHub">
@@ -82,18 +85,18 @@
     <!-- About Section -->
     <section id="sobre" class="about">
         <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title" data-i18n="aboutTitle">Sobre Mim</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="lead">
+                    <p class="lead" data-i18n="aboutLead">
                         Tenho 24 anos, natural de São Sebastião do Paraíso, MG. Sou um profissional dedicado e ambicioso, 
                         apaixonado por tecnologia e sempre em busca de crescimento e aprendizado contínuo.
                     </p>
-                    <p>
+                    <p data-i18n="aboutP1">
                         Atualmente cursando <strong>Sistemas de Informação</strong> na <em>Libertas Faculdades Integradas</em>, 
                         com previsão de conclusão em <strong>dezembro de 2026</strong>.
                     </p>
-                    <p>
+                    <p data-i18n="aboutP2">
                         Com experiência em suporte técnico, desenvolvimento mobile e ensino, busco sempre aplicar 
                         meus conhecimentos para criar soluções que façam a diferença.
                     </p>
@@ -105,19 +108,19 @@
     <!-- Experience Section -->
     <section id="experiencia" class="experience">
         <div class="container">
-            <h2 class="section-title">Experiência Profissional</h2>
+            <h2 class="section-title" data-i18n="experienceTitle">Experiência Profissional</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Técnico de TI</h3>
-                        <span class="timeline-period">1 ano e 8 meses</span>
-                        <p>Atendimento remoto, manutenção de hardwares, servidores, nobreaks, Windows Servers e resolução de problemas de sistemas operacionais remotamente.</p>
+                        <h3 data-i18n="job1Title">Técnico de TI</h3>
+                        <span class="timeline-period" data-i18n="job1Period">1 ano e 8 meses</span>
+                        <p data-i18n="job1Desc">Atendimento remoto, manutenção de hardwares, servidores, nobreaks, Windows Servers e resolução de problemas de sistemas operacionais remotamente.</p>
                         <ul class="timeline-skills">
-                            <li>Atendimento Remoto</li>
-                            <li>Manutenção de Hardware</li>
+                            <li data-i18n="skillRemoteSupport">Atendimento Remoto</li>
+                            <li data-i18n="skillHardware">Manutenção de Hardware</li>
                             <li>Windows Server</li>
-                            <li>Suporte Técnico</li>
+                            <li data-i18n="skillTechSupport">Suporte Técnico</li>
                         </ul>
                     </div>
                 </div>
@@ -125,9 +128,9 @@
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Estágio em Desenvolvimento Mobile</h3>
-                        <span class="timeline-period">6 meses</span>
-                        <p>Desenvolvimento de aplicativos mobile utilizando Flutter e Dart, com consumo de APIs e implementação de funcionalidades complexas.</p>
+                        <h3 data-i18n="job2Title">Estágio em Desenvolvimento Mobile</h3>
+                        <span class="timeline-period" data-i18n="job2Period">6 meses</span>
+                        <p data-i18n="job2Desc">Desenvolvimento de aplicativos mobile utilizando Flutter e Dart, com consumo de APIs e implementação de funcionalidades complexas.</p>
                         <ul class="timeline-skills">
                             <li>Flutter</li>
                             <li>Dart</li>
@@ -140,14 +143,14 @@
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Professor de Desenvolvimento de Sistemas</h3>
-                        <span class="timeline-period">10 meses</span>
-                        <p>Lecionando em escola pública pelo estado de MG, disciplinas como Banco de Dados, Desenvolvimento Web, Algoritmos e Estruturas de Dados, Matemática Discreta e Arquitetura de Sistemas para alunos do ensino médio técnico.</p>
+                        <h3 data-i18n="job3Title">Professor de Desenvolvimento de Sistemas</h3>
+                        <span class="timeline-period" data-i18n="job3Period">10 meses</span>
+                        <p data-i18n="job3Desc">Lecionando em escola pública pelo estado de MG, disciplinas como Banco de Dados, Desenvolvimento Web, Algoritmos e Estruturas de Dados, Matemática Discreta e Arquitetura de Sistemas para alunos do ensino médio técnico.</p>
                         <ul class="timeline-skills">
-                            <li>Ensino Técnico</li>
-                            <li>Banco de Dados</li>
-                            <li>Desenvolvimento Web</li>
-                            <li>Algoritmos e Estrutura de Dados</li>
+                            <li data-i18n="skillTechTeaching">Ensino Técnico</li>
+                            <li data-i18n="skillDatabase">Banco de Dados</li>
+                            <li data-i18n="skillWebDev">Desenvolvimento Web</li>
+                            <li data-i18n="skillAlgorithms">Algoritmos e Estrutura de Dados</li>
                         </ul>
                     </div>
                 </div>
@@ -158,22 +161,22 @@
     <!-- Certifications Section -->
     <section id="certificacoes" class="certifications">
         <div class="container">
-            <h2 class="section-title">Certificações</h2>
+            <h2 class="section-title" data-i18n="certificationsTitle">Certificações</h2>
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-icon">🎓</div>
                     <h3>Harvard do Brasil</h3>
-                    <p>Certificação em tecnologia e desenvolvimento</p>
+                    <p data-i18n="cert1Desc">Certificação em tecnologia e desenvolvimento</p>
                 </div>
                 <div class="cert-card">
                     <div class="cert-icon">☁️</div>
                     <h3>AWS Cloud Practitioner</h3>
-                    <p>Fundamentos de computação em nuvem AWS</p>
+                    <p data-i18n="cert2Desc">Fundamentos de computação em nuvem AWS</p>
                 </div>
                 <div class="cert-card highlight">
                     <div class="cert-icon">🏆</div>
-                    <h3>10° Colocado</h3>
-                    <p>Competição Amazon Engenharia de Prompt</p>
+                    <h3 data-i18n="cert3Title">10° Colocado</h3>
+                    <p data-i18n="cert3Desc">Competição Amazon Engenharia de Prompt</p>
                     <span class="badge">Top 10</span>
                 </div>
             </div>
@@ -183,10 +186,10 @@
     <!-- Skills Section -->
     <section id="conhecimentos" class="skills">
         <div class="container">
-            <h2 class="section-title">Conhecimentos & Habilidades</h2>
+            <h2 class="section-title" data-i18n="skillsTitle">Conhecimentos & Habilidades</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Linguagens</h3>
+                    <h3 data-i18n="skillCatLanguages">Linguagens</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">JavaScript</span>
@@ -196,7 +199,7 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Frameworks & Tecnologias</h3>
+                    <h3 data-i18n="skillCatFrameworks">Frameworks & Tecnologias</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Flask</span>
                         <span class="skill-tag">Flutter</span>
@@ -205,19 +208,19 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Conceitos & Fundamentos</h3>
+                    <h3 data-i18n="skillCatConcepts">Conceitos & Fundamentos</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Estrutura de Dados</span>
+                        <span class="skill-tag" data-i18n="skillDataStructures">Estrutura de Dados</span>
                         <span class="skill-tag">Algoritmos</span>
                         <span class="skill-tag">LLMs</span>
                         <span class="skill-tag">Machine Learning</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Idiomas</h3>
+                    <h3 data-i18n="skillCatLanguagesHuman">Idiomas</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Inglês Intermediário</span>
-                        <span class="skill-tag">Português Nativo</span>
+                        <span class="skill-tag" data-i18n="skillEnglish">Inglês Intermediário</span>
+                        <span class="skill-tag" data-i18n="skillPortuguese">Português Nativo</span>
                     </div>
                 </div>
             </div>
@@ -227,10 +230,10 @@
     <!-- Contact Section -->
     <section id="contato" class="contact">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
+            <h2 class="section-title" data-i18n="contactTitle">Entre em Contato</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <p class="contact-lead">Vamos conversar sobre oportunidades ou projetos!</p>
+                    <p class="contact-lead" data-i18n="contactLead">Vamos conversar sobre oportunidades ou projetos!</p>
                     <div class="contact-methods">
                         <a href="mailto:cristian.biasi20@gmail.com" class="contact-item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -270,19 +273,20 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; <span id="currentYear"></span> Cristian de Biasi. Todos os direitos reservados.</p>
-                <p class="footer-subtitle">Desenvolvido com HTML, CSS e JavaScript</p>
+                <p>&copy; <span id="currentYear"></span> Cristian de Biasi. <span data-i18n="footerRights">Todos os direitos reservados.</span></p>
+                <p class="footer-subtitle" data-i18n="footerBuilt">Desenvolvido com HTML, CSS e JavaScript</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <button id="backToTop" class="back-to-top" data-i18n-aria="backToTop" title="Voltar ao topo" aria-label="Voltar ao topo">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
+    <script src="src/i18n.js"></script>
     <script src="src/index.js"></script>
 </body>
 </html>

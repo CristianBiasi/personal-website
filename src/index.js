@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Initialize i18n (auto-detect language by IP)
+    if (typeof initI18n === 'function') {
+        initI18n();
+    }
+
     // Update copyright year
     atualizarCopyright();
     
